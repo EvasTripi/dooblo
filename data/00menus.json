@@ -1,0 +1,31 @@
+[
+    {
+        "model": "FlrMenuSection",
+        "meta_id": "project_section",
+        "data": {
+            "name": "Proyectos",
+            "sequence": 1
+        }
+    },
+    {
+        "model": "FlrMenu",
+        "meta_id": "project_menu",
+        "data": {
+            "section_id_META_ID": "project_section",
+            "name": "Proyecto",
+            "sequence": 1
+        }
+    },
+    {
+        "model": "FlrACL",
+        "meta_id": "project_acl",
+        "data": {
+            "name": "access project",
+            "model": "Project",
+            "perm_read": true,
+            "perm_create": true,
+            "perm_update": true,
+            "perm_delete": false
+        }
+    }
+]

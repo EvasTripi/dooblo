@@ -1,0 +1,97 @@
+[
+    {
+        "model": "FlrView",
+        "meta_id": "project_list_view",
+        "data": {
+            "name": "Project list view",
+            "model": "Project",
+            "view_type": "list",
+            "definition": {
+                "structure": [
+                    {"field": "name"}
+                ]
+            },
+            "menu_id_META_ID": "project_menu",
+            "sequence": 1
+        }
+    },
+    {
+        "model": "FlrView",
+        "meta_id": "project_form_view",
+        "data": {
+            "name": "Project form view",
+            "model": "Project",
+            "view_type": "form",
+            "definition": {
+                "buttons": [
+                    {
+                        "text": "Descargar datos",
+                        "action": "method",
+                        "options": {
+                            "name": "download_data"
+                        }
+                    }
+                ],
+                "structure": [
+                    {"section": "General"},
+                    {"section": "Proceso"},
+                    {"section": "Survey to go"}
+                ],
+                "General": [
+                    {
+                        "field": "name",
+                        "readonly": "this.id"
+                    },
+                    {
+                        "field": "database_procesada"
+                    }
+                ],
+                "Proceso": [
+                    {
+                        "field": "edicion_base_project",
+                        "label": "Ediciones a la base de datos",
+                        "readonly": false,
+                        "options": {
+                            "add": true,
+                            "remove": true,
+                            "related_fields": [
+                                {
+                                    "field":"id",
+                                    "readonly": true
+                                },
+                                {
+                                    "field":"proceso"
+                                },
+                                {
+                                    "field":"nombre_ori"
+                                },
+                                {
+                                    "field":"ini_ori"
+                                },
+                                {
+                                    "field":"fin_ori"
+                                },
+                                {
+                                    "field":"nombre_sol"
+                                },
+                                {
+                                    "field":"ini_sol"
+                                },
+                                {
+                                    "field":"fin_sol"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "Survey to go": [
+                    {
+                        "field": "surveyid"
+                    }
+                ]
+            },
+            "menu_id_META_ID": "project_menu",
+            "sequence": 1
+        }
+    }
+]
